@@ -1,0 +1,56 @@
+CREATE TABLE user(
+  id_user    INTEGER PRIMARY KEY AUTOINCREMENT, 
+  user_name  TEXT  UNIQUE NOT NULL,
+  passwd_hash  TEXT NOT NULL,
+  reg_time   INTEGER NOT NULL,
+  real_name  TEXT,
+  stuff_id   TEXT,
+  sex        TEXT,
+  tel_no     TEXT,
+  email      TEXT
+);
+
+CREATE TABLE subject(
+  id_subject    INTEGER PRIMARY KEY AUTOINCREMENT, 
+  id_user     INTEGER NOT NULL,
+  subject    TEXT  UNIQUE NOT NULL,
+  multi_select  INTEGER NOT NULL,
+  option_num  INTEGER NOT NULL,
+  create_time   INTEGER NOT NULL,
+  vote_cnt  INTEGER NOT NULL,
+  comment_cnt  INTEGER NOT NULL,
+  view_cnt  INTEGER NOT NULL,
+  last_update_time   INTEGER NOT NULL,
+FOREIGN KEY(id_user) REFERENCES user(id_user)
+);
+
+CREATE TABLE option(
+  id_option    INTEGER PRIMARY KEY AUTOINCREMENT, 
+  id_subject    INTEGER,
+  option_name    TEXT  NOT NULL,
+  select_cnt  INTEGER NOT NULL,
+FOREIGN KEY(id_subject) REFERENCES subject(id_subject)
+);
+
+CREATE TABLE vote(
+  id_vote    INTEGER PRIMARY KEY AUTOINCREMENT, 
+  id_user    INTEGER  NOT NULL,
+  id_subject INTEGER  NOT NULL,
+  id_option  INTEGER  NOT NULL,
+  vote_time  INTEGER NOT NULL,
+  vote_ip    TEXT,
+FOREIGN KEY(id_user) REFERENCES user(id_user),
+FOREIGN KEY(id_subject) REFERENCES subject(id_subject),
+FOREIGN KEY(id_option) REFERENCES option(id_option)
+);
+
+CREATE TABLE comment(
+  id_comment    INTEGER PRIMARY KEY AUTOINCREMENT, 
+  id_user    INTEGER  NOT NULL,
+  id_subject INTEGER  NOT NULL,
+  comment    TEXT  NOT NULL,
+  comment_time    INTEGER NOT NULL,
+  comment_ip    TEXT,
+FOREIGN KEY(id_user) REFERENCES user(id_user),
+FOREIGN KEY(id_subject) REFERENCES subject(id_subject)
+);

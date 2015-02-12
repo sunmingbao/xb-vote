@@ -1,0 +1,33 @@
+/* 
+ * 本软件为免费、开源软件。
+ * 本软件的版权(包括源码及二进制发布版本)归一切公众所有。
+ * 您可以自由使用、传播本软件。
+ * 您也可以以任何形式、任何目的使用本软件(包括源码及二进制发布版本)，而不受任何版权限制。
+ * =====================
+ * 作者: 孙明保
+ * 邮箱: sunmingbao@126.com
+ */
+
+h1 {text-align:center; color:red; font-family:黑体; font-size:40px;}
+h3 {text-align:center; color:red; font-family:黑体; font-size:20px;}
+/*
+table
+{
+  text-align:center;
+}
+*/
+
+
+th
+{
+  text-align:left; color:black; font-family:黑体; font-size:25px;
+}
+
+td
+{
+  text-align:left; color:green; font-family:黑体; font-size:25px;
+}
+
+#my_font_small {font-family:黑体; font-size:20px;}
+#my_font_2 {color:black; font-family:宋体; font-size:25px;}
+#big_red_font {text-align:center; color:red; font-family:黑体; font-size:40px;}
