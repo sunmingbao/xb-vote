@@ -35,7 +35,7 @@
 
 <br>
 
-<a href="/cgi-bin/new_vote_ui.php"><center><font id="big_red_font">创建投票</font></center></a>
+<center><a href="/cgi-bin/new_vote_ui.php"><font id="big_red_font">创建投票</font></a></center>
 <br>
 <br>
 

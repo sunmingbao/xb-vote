@@ -17,13 +17,9 @@ function print_header()
 function print_bottom()
 {
     document.write("<br><br>");
-    document.write("<center><a href='/'>返回首页</a></center>");
     document.write("<br><hr>");
-    document.write("<h3><span name='bottom'>小兵投票</spane></h3>");
+    document.write("<center><a href='/'><font id='small_red_font'>小兵投票</font></a></center>");
+    document.write("<br>");
+    document.write("<center><font id='very_small_black_font'>本软件为开源免费软件，源码下载地址<a href='http://sourceforge.net/projects/xb-vote/files/'>sourceforge</a></font></center>");
 }
 
-function print_bottom_user()
-{
-    document.write("<br><hr>");
-    document.write("<h3><span name='bottom'>小兵投票</spane></h3>");
-}

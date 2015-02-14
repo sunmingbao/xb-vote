@@ -31,3 +31,5 @@ td
 #my_font_small {font-family:黑体; font-size:20px;}
 #my_font_2 {color:black; font-family:宋体; font-size:25px;}
 #big_red_font {text-align:center; color:red; font-family:黑体; font-size:40px;}
+#small_red_font {text-align:center; color:red; font-family:黑体; font-size:25px;}
+#very_small_black_font {text-align:center; color:black; font-family:黑体; font-size:15px;}

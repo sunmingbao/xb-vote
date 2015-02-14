@@ -20,6 +20,7 @@
         die("<H1>invalid id_subject.</H1>");
     }
     $id_subject=(int)$_GET['id_subject'];
+    $id_user=$_SESSION['id_user'];
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -120,30 +121,44 @@ function chk_comment(theForm){
 <?php
   $result = $file_db->query($query_str);
   foreach($result as $row) 
-{
-    echo "<tr>";
-    echo "<td>";
-    if ($row['multi_select']==1)
-        echo "<input type='checkbox' name='option[]' value='".$row['id_option']."' >";
-    else
-        echo "<input type='radio' name='option' value='".$row['id_option']."' checked='true'>";
-
-    echo $row['option_name'];
-    echo "</td>";
-    echo "<td>";
-    echo $row['select_cnt'];
-    echo "</td>";
-    echo "</tr>";
-}			  
+  {
+      echo "<tr>";
+      echo "<td>";
+      if ($row['multi_select']==1)
+          echo "<input type='checkbox' name='option[]' value='".$row['id_option']."' >";
+      else
+          echo "<input type='radio' name='option' value='".$row['id_option']."' checked='true'>";
+  
+      echo $row['option_name'];
+      echo "</td>";
+      echo "<td>";
+      echo $row['select_cnt'];
+      echo "</td>";
+      echo "</tr>";
+  }			  
 ?>
 
 
   </table>
- <input type="submit" value="投票">
+<?php
+  $query_str="select * from vote where id_subject=".$id_subject." and id_user=".$id_user;
+  $result = $file_db->query($query_str);
+  echo "<br><br><tr><td>";
+  if (result_empty($result))
+  {
+      echo "<input type='submit' value='投票'>";
+  }
+  else
+  {
+      echo "<input type='submit' value='您已经投过了' disabled='true'>";
+  }
+  echo "</td><td></td></tr>";
+?>
+
 </form>
 
 <br>
-已投者:
+已投票用户:&nbsp;
 <?php
     $query_str="select * from vote as v  cross join subject as s cross join user as u  where ";
     $query_str=$query_str." v.id_subject=".$id_subject;
@@ -154,7 +169,7 @@ $cnt=0;
   foreach($result as $row) 
   {
     $cnt++;
-    echo $row['real_name']."&nbsp;";
+    echo $row['real_name']."&nbsp;&nbsp;";
 
   }
 	  
