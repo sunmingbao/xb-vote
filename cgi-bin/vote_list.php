@@ -70,7 +70,7 @@
         $id_subject=(int)$row['id_subject'];
         echo "<TR>";
         echo "<TD>".$cnt."</TD>";
-        echo "<TD><a href='vote_ui.php?id_subject=".$id_subject."'>".$row['subject']."</a></TD>";
+        echo "<TD><a href='vote_ui.php?id_subject=".$id_subject."' target='_blank'>".$row['subject']."</a></TD>";
         echo "<TD>".$row['vote_cnt']."</TD>";
         echo "<TD>".$row['view_cnt']."</TD>";
         echo "<TD>".$row['comment_cnt']."</TD>";

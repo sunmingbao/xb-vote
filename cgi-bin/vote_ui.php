@@ -106,7 +106,7 @@ function chk_comment(theForm){
     }
 
   echo "<h1>".$subject."</h1>";
-  echo "<h3>(创建者:".$author.")</h3>";
+  echo "<center><font id='small_song_black'>(创建人：".$author.")</font></center>";
 ?>
 
   <form action="vote.php" method="post" onSubmit="return chk(this)">
@@ -175,7 +175,8 @@ $cnt=0;
 	  
 ?>
 
-<h1>评论</h1>
+<br><br><br>
+
   <form action="comment.php" method="post" onSubmit="return chk_comment(this)">
   <input type="hidden" name="id_subject" <?php  echo  "value='".$id_subject."'"; ?> >
   <input type="hidden" name="multi_select" <?php  echo  "value='".$multi_select."'"; ?> >
@@ -184,7 +185,7 @@ $cnt=0;
  <input type="submit" value="发表评论">
 </form>
 <br>
-
+<h1>所有评论</h1>
 <?php
     $query_str="select * from comment as c  cross join user as u where ";
     $query_str=$query_str." c.id_subject=".$id_subject;
@@ -195,7 +196,7 @@ $cnt=0;
   foreach($result as $row) 
   {
     $cnt++;
-    echo "<hr><br>".$cnt."楼 &nbsp;&nbsp;".$row['real_name']."&nbsp;&nbsp;&nbsp;&nbsp;".user_time($row['comment_time'])."<br>".$row['comment']."<br>";
+    echo "<hr><br><font id='font_comment_hdr'>".$cnt."楼 &nbsp;&nbsp;".$row['real_name']."&nbsp;&nbsp;&nbsp;&nbsp;".user_time($row['comment_time'])."</font><br><font id='font_comment'>".$row['comment']."</font><br>";
 
   }
 	  

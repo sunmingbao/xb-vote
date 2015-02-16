@@ -20,6 +20,7 @@ $vote_time=time();
     $id_subject=(int)$_POST['id_subject'];
     $multi_select=(int)$_POST['multi_select'];
     $id_user=$_SESSION['id_user'];
+    $client_ip=$_SERVER["REMOTE_ADDR"];
 
     get_mutex();
     if (0!=open_database())
@@ -60,7 +61,7 @@ if ($multi_select==1)
 else
 {
       $id_option =$_POST['option'];
-      $sql_str = "insert into vote values(NULL, ".$id_user.",".$id_subject.",".$id_option.", ".$vote_time.", NULL)";
+      $sql_str = "insert into vote values(NULL, ".$id_user.",".$id_subject.",".$id_option.", ".$vote_time.", '".$client_ip."')";
       try
       {
         $file_db->exec($sql_str);

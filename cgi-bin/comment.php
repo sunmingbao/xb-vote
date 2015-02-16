@@ -21,6 +21,7 @@ $comment_time=time();
     $multi_select=(int)$_POST['multi_select'];
     $comment=$_POST['comment'];
     $id_user=$_SESSION['id_user'];
+    $client_ip=$_SERVER["REMOTE_ADDR"];
 
 
     get_mutex();
@@ -34,7 +35,7 @@ $comment_time=time();
 
 
 
-      $sql_str = "insert into comment values(NULL, ".$id_user.",".$id_subject.",'".$comment."', ".$comment_time.", NULL)";
+      $sql_str = "insert into comment values(NULL, ".$id_user.",".$id_subject.",'".$comment."', ".$comment_time.", '".$client_ip."')";
       try
       {
         $file_db->exec($sql_str);
