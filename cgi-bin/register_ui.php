@@ -67,51 +67,51 @@ function chk(theForm){
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">用&nbsp;户&nbsp;名:</td>
-      <td bgcolor="#FFFFFF"><input name="user_name" type="text" id="user_name" size="20" maxlength="20" />
+      <td bgcolor="#FFFFFF"><input name="user_name" type="text"  size="20" maxlength="20" />
       <font color="#FF0000"> *</font>(字母开头，由字母或数字组成)</td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">密&nbsp;&nbsp;&nbsp;码:</td>
-      <td bgcolor="#FFFFFF"><input name="password" type="password" id="password" size="20" maxlength="20" />
+      <td bgcolor="#FFFFFF"><input name="password" type="password" size="20" maxlength="20" />
       <font color="#FF0000"> *</font>(由数字或字母组成)</td>
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">确认密码:</td>
-      <td bgcolor="#FFFFFF"><input name="pass" type="password" id="pass" size="20" maxlength="20" />
+      <td bgcolor="#FFFFFF"><input name="pass" type="password" size="20" maxlength="20" />
       <font color="#FF0000"> *</font>(再次输入密码)</td>
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">真实姓名:</td>
-      <td bgcolor="#FFFFFF"><input name="real_name" type="text" id="real_name" size="20" />
+      <td bgcolor="#FFFFFF"><input name="real_name" type="text" size="20" />
       <label><font color="#FF0000">*</font></label></td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">工号(中兴员工):</td>
-      <td bgcolor="#FFFFFF"><input name="stuff_id" type="text" id="stuff_id" size="20" value="10053199" />
+      <td bgcolor="#FFFFFF"><input name="stuff_id" type="text" size="20" value="10053199" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">性&nbsp;&nbsp;&nbsp;别:</td>
       <td align="left" bgcolor="#FFFFFF">
-        <select style="WIDTH: 50px" name="sex" id="sex">   
+        <select style="WIDTH: 50px" name="sex" >   
         <option value="男">男</option>
         <option value="女">女</option>
       </select> 
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">电话:</td>
-      <td bgcolor="#FFFFFF"><input name="member_phone" type="text" id="member_phone" size="20"/></td>
+      <td bgcolor="#FFFFFF"><input name="member_phone" type="text"  size="20"/></td>
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">电子邮箱:</td>
-      <td bgcolor="#FFFFFF"><input name="member_email" type="text" id="member_email" size="20"/></td>
+      <td bgcolor="#FFFFFF"><input name="member_email" type="text" size="20"/></td>
     </tr>
     <tr>
-      <td colspan="2" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="button" value="重置表单" />
-      <input type="submit" name="submit" id="submit" value="确定注册" /></center></td>
+      <td colspan="2" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="font_button" value="重置" />
+      <input type="submit" name="submit" id="font_button" value="注册" /></center></td>
     </tr>
   </table>
 </form>

@@ -146,11 +146,11 @@ function chk_comment(theForm){
   echo "<br><br><tr><td>";
   if (result_empty($result))
   {
-      echo "<input type='submit' value='投票'>";
+      echo "<input type='submit' id='font_button' value='投票'>";
   }
   else
   {
-      echo "<input type='submit' value='您已经投过了' disabled='true'>";
+      echo "<input type='submit' id='font_button' value='您已经投过了' disabled='true'>";
   }
   echo "</td><td></td></tr>";
 ?>
@@ -182,7 +182,7 @@ $cnt=0;
   <input type="hidden" name="multi_select" <?php  echo  "value='".$multi_select."'"; ?> >
 <textarea name="comment" id="descript" cols="60" rows="5"></textarea>
 <br>
- <input type="submit" value="发表评论">
+ <input type="submit" id="font_button" value="发表评论">
 </form>
 <br>
 <h1>所有评论</h1>

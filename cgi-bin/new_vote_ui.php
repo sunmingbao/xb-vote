@@ -61,7 +61,7 @@ function chk(theForm){
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">标题:</td>
-      <td bgcolor="#FFFFFF"><input name="subject" type="text" id="subject" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="subject" type="text" size="30" maxlength="30" />
       <font color="#FF0000"> *</font></td>
     </tr>
 
@@ -75,67 +75,67 @@ function chk(theForm){
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项1:</td>
-      <td bgcolor="#FFFFFF"><input name="option1" type="text" id="option1" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option1" type="text" size="30" maxlength="30" />
       <font color="#FF0000"> *</font></td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项2:</td>
-      <td bgcolor="#FFFFFF"><input name="option2" type="text" id="option2" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option2" type="text" size="30" maxlength="30" />
       <font color="#FF0000"> *</font></td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项3:</td>
-      <td bgcolor="#FFFFFF"><input name="option3" type="text" id="option3" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option3" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项4:</td>
-      <td bgcolor="#FFFFFF"><input name="option4" type="text" id="option4" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option4" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项5:</td>
-      <td bgcolor="#FFFFFF"><input name="option5" type="text" id="option5" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option5" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项6:</td>
-      <td bgcolor="#FFFFFF"><input name="option6" type="text" id="option6" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option6" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项7:</td>
-      <td bgcolor="#FFFFFF"><input name="option7" type="text" id="option7" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option7" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项8:</td>
-      <td bgcolor="#FFFFFF"><input name="option8" type="text" id="option8" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option8" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项9:</td>
-      <td bgcolor="#FFFFFF"><input name="option9" type="text" id="option9" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option9" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">选项10:</td>
-      <td bgcolor="#FFFFFF"><input name="option10" type="text" id="option10" size="30" maxlength="30" />
+      <td bgcolor="#FFFFFF"><input name="option10" type="text" size="30" maxlength="30" />
       </td>
     </tr>
 
     <tr>
-      <td colspan="2" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="button" value="重置" />
-      <input type="submit" name="submit" id="submit" value="提交" /></center></td>
+      <td colspan="2" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="font_button" value="重置" />
+      <input type="submit" name="submit" id="font_button" value="提交" /></center></td>
     </tr>
   </table>
 </form>

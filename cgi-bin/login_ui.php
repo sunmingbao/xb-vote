@@ -143,20 +143,20 @@ document.getElementById('password').value='';
     <tr>
       <td align="right" bgcolor="#FFFFFF">账&nbsp;&nbsp;&nbsp;号:</td>
       <td bgcolor="#FFFFFF">
-<input name="user_name" type="text" id="user_name" size="20" maxlength="20" />
+<input name="user_name" type="text" size="20" maxlength="20" />
 <input name='user_time_zone' type="hidden"  value="Asia/Shanghai">
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">密&nbsp;&nbsp;&nbsp;码:</td>
-      <td bgcolor="#FFFFFF"><input name="password" type="password" autocomplete="off" id="password" size="20" maxlength="20" />
+      <td bgcolor="#FFFFFF"><input name="password" type="password" autocomplete="off" size="20" maxlength="20" />
       </td>
     </tr>
 
     <tr>
-      <td colspan="2" align="center" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="button" value="重置" />
-      <input type="submit" name="submit" id="submit" value="确定" /></center></td>
+      <td colspan="2" align="center" bgcolor="#FFFFFF"><center>
+      <input type="submit" name="submit" id="font_button" value="  登陆  " /></center></td>
     </tr>
   </table>
 </form>
