@@ -43,12 +43,19 @@ function chk(theForm){
 		return (false);   
 	}
 		 
-	if (theForm.real_name.value.replace(/(^\s*)|(\s*$)/g, "") == "" || theForm.real_name.value.replace(/[\u4e00-\u9fa5]/g, "")){
-		alert("真实姓名不能为空且必须为中文！");   
+	if (theForm.real_name.value.replace(/(^\s*)|(\s*$)/g, "") == ""){
+		alert("真实姓名不能为空！");   
 		theForm.real_name.focus();   
 		return (false);   
 	}
 
+/*
+	if (theForm.real_name.value.replace(/[\u4e00-\u9fa5]/g, "")){
+		alert("真实姓名必须为中文！");   
+		theForm.real_name.focus();   
+		return (false);   
+	}
+*/
         return (true); 
 }
 </script>
@@ -89,7 +96,7 @@ function chk(theForm){
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">工号(中兴员工):</td>
-      <td bgcolor="#FFFFFF"><input name="stuff_id" type="text" size="20" value="10053199" />
+      <td bgcolor="#FFFFFF"><input name="stuff_id" type="text" size="20" value="00000000" />
       </td>
     </tr>
 

@@ -81,23 +81,21 @@ function chk(theForm)
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">真实姓名:</td>
-      <td bgcolor='#FFFFFF'><input name='real_name' type='text'  size='20' value='<?php echo $_SESSION['real_name']; ?>' /></td>
+      <td bgcolor='#FFFFFF'><?php echo $_SESSION['real_name']; ?></td>
       
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">工号(中兴员工):</td>
-      <td bgcolor="#FFFFFF"><input name="stuff_id" type="text" size="20" value="<?php echo $_SESSION['stuff_id']; ?>" />
+      <td bgcolor="#FFFFFF"><?php echo $_SESSION['stuff_id']; ?>
       </td>
     </tr>
 
     <tr>
       <td align="right" bgcolor="#FFFFFF">性&nbsp;&nbsp;&nbsp;别:</td>
       <td align="left" bgcolor="#FFFFFF">
-        <select style="WIDTH: 50px" name="sex" >   
-        <option value="男" <?php if ($_SESSION['sex']=='男') echo  "selected='selected'"; ?> >男</option>
-        <option value="女" <?php if ($_SESSION['sex']=='女') echo  "selected='selected'"; ?> >女</option>
-      </select> 
+        <?php echo $_SESSION['sex']; ?>
+      </td> 
     </tr>
     <tr>
       <td align="right" bgcolor="#FFFFFF">电话:</td>

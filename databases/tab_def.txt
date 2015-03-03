@@ -16,6 +16,7 @@ CREATE TABLE subject(
   subject    TEXT  UNIQUE NOT NULL,
   multi_select  INTEGER NOT NULL,
   option_num  INTEGER NOT NULL,
+  anyone_can_vote  INTEGER NOT NULL,
   create_time   INTEGER NOT NULL,
   vote_cnt  INTEGER NOT NULL,
   comment_cnt  INTEGER NOT NULL,
@@ -26,9 +27,15 @@ FOREIGN KEY(id_user) REFERENCES user(id_user)
 
 CREATE TABLE option(
   id_option    INTEGER PRIMARY KEY AUTOINCREMENT, 
-  id_subject    INTEGER,
+  id_subject   INTEGER  NOT NULL,
   option_name    TEXT  NOT NULL,
   select_cnt  INTEGER NOT NULL,
+FOREIGN KEY(id_subject) REFERENCES subject(id_subject)
+);
+
+CREATE TABLE voter_list(
+  id_subject INTEGER  NOT NULL,
+  voter      TEXT  NOT NULL,
 FOREIGN KEY(id_subject) REFERENCES subject(id_subject)
 );
 

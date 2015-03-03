@@ -45,6 +45,14 @@ function chk(theForm){
 
         return (true); 
 }
+
+function not_anyone_can_vote(theForm){
+   var voter_list=document.getElementsByName('voter_list')[0];
+   voter_list.disabled=false;
+   if (voter_list.value=='')
+       voter_list.value=' 请输入参与人列表,以英文字符逗号间隔.\n 参与人用 工号 或 用户名 或 真实姓名 表示均可\n 例如\n 10053199,WangJun,张三';
+}
+
 </script>
 </head>
 
@@ -132,7 +140,17 @@ function chk(theForm){
       <td bgcolor="#FFFFFF"><input name="option10" type="text" size="30" maxlength="30" />
       </td>
     </tr>
-
+    <tr>
+      <td align="right" bgcolor="#FFFFFF">参与人限制:</td>
+      <td bgcolor="#FFFFFF">
+             <input  type="radio" name="anyone_can_vote" value ="1" checked="checked" onclick="var aa=document.getElementsByName('voter_list')[0];if (voter_list.value.charAt(0)==' ')
+       voter_list.value=''; aa.disabled=true; "  />任何人 &nbsp;&nbsp;&nbsp;&nbsp;
+             <input  type="radio" name="anyone_can_vote" value ="0" onclick="not_anyone_can_vote(this);" />指定用户
+             <br>
+             <textarea name="voter_list" disabled='true' cols="80" rows="5" onclick="var aa=document.getElementsByName('voter_list')[0];if (voter_list.value.charAt(0)==' ')
+       voter_list.value='';"></textarea>
+      </td>
+    </tr>
     <tr>
       <td colspan="2" bgcolor="#FFFFFF"><center><input type="reset" name="button" id="font_button" value="重置" />
       <input type="submit" name="submit" id="font_button" value="提交" /></center></td>

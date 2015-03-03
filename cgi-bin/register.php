@@ -40,6 +40,7 @@ session_start();
     $password_hash=md5($_POST['password']);
     $real_name=$_POST['real_name'];
     $stuff_id=$_POST['stuff_id'];
+    if($stuff_id=='') $stuff_id = '00000000';
     $sex=$_POST['sex'];
     $tel_no=$_POST['member_phone'];
     $email=$_POST['member_email'];

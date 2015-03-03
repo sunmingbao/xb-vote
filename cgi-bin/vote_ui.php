@@ -21,6 +21,8 @@
     }
     $id_subject=(int)$_GET['id_subject'];
     $id_user=$_SESSION['id_user'];
+    $user_can_vote=0;
+    $anyone_can_vote=0;
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -96,6 +98,7 @@ function chk_comment(theForm){
         $cnt=$cnt+1;
         $subject=$row['subject'];
         $multi_select=$row['multi_select'];
+        $anyone_can_vote = $row['anyone_can_vote'];
         $author=$row['real_name'];
     }
 
@@ -141,16 +144,44 @@ function chk_comment(theForm){
 
   </table>
 <?php
-  $query_str="select * from vote where id_subject=".$id_subject." and id_user=".$id_user;
-  $result = $file_db->query($query_str);
+
+
+
   echo "<br><br><tr><td>";
-  if (result_empty($result))
+  if ($anyone_can_vote==0)
   {
-      echo "<input type='submit' id='font_button' value='投票'>";
+    $query_str="select * from voter_list where id_subject=".$id_subject;
+    $result = $file_db->query($query_str);
+    foreach($result as $row) 
+    {
+        if ($row['voter']==$id_user || $row['voter']==$_SESSION['stuff_id'] || $row['voter']==$_SESSION['real_name'])
+        {
+            $user_can_vote=1;
+            break;
+        }
+    }
   }
   else
   {
-      echo "<input type='submit' id='font_button' value='您已经投过了' disabled='true'>";
+    $user_can_vote=1;
+  }
+
+  if ($user_can_vote==0)
+      {
+          echo "<input type='submit' id='font_button' value='您不能参与此投票' disabled='true'>";
+      }
+  else
+  {
+      $query_str="select * from vote where id_subject=".$id_subject." and id_user=".$id_user;
+      $result = $file_db->query($query_str);
+      if (result_empty($result))
+      {
+          echo "<input type='submit' id='font_button' value='投票'>";
+      }
+      else
+      {
+          echo "<input type='submit' id='font_button' value='您已经投过了' disabled='true'>";
+      }
   }
   echo "</td><td></td></tr>";
 ?>
@@ -172,6 +203,8 @@ $cnt=0;
     echo $row['real_name']."&nbsp;&nbsp;";
 
   }
+
+  echo "<br>共&nbsp;&nbsp;".$cnt."&nbsp;&nbsp;人";
 	  
 ?>
 

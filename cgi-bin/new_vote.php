@@ -21,6 +21,10 @@ $create_time=time();
 
     $subject=$_POST['subject'];
     $multi_select=(int)$_POST['multi_select'];
+    $anyone_can_vote=(int)$_POST['anyone_can_vote'];
+    $voter_list= explode(',',preg_replace('/\s+/', '', $_POST['voter_list']));
+    $voter_num=count($voter_list);
+//var_dump($voter_list);
     $author=$_SESSION['user_name'];
  $id_user=$_SESSION['id_user'];
 
@@ -57,7 +61,7 @@ foreach($_POST as $key => $value)
 
     try
     {
-        $file_db->exec("insert into subject values(NULL, ".$id_user.", '".$subject."',".$multi_select.", ".$option_num.", ".$create_time.",0,0,0,".$create_time.")");
+        $file_db->exec("insert into subject values(NULL, ".$id_user.", '".$subject."',".$multi_select.", ".$option_num.", ".$anyone_can_vote.", ".$create_time.",0,0,0,".$create_time.")");
     }
     catch (PDOException $e) 
     {
@@ -82,9 +86,14 @@ foreach($_POST as $key => $value)
         }
     }
 
+    for($x=0;$x<$voter_num;$x++) {
+      if ($voter_list[$x] != "")
+          $file_db->exec("insert into voter_list values(".$id_subject.",'".$voter_list[$x]."')");
+    }
+
     put_mutex();
     
 
-header("Location:vote_list.php");
+   header("Location:vote_list.php");
 
 ?>

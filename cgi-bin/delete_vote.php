@@ -28,6 +28,7 @@
 
         $file_db->exec("delete from subject where id_subject=".$id_subject."");
         $file_db->exec("delete from option where id_subject=".$id_subject."");
+        $file_db->exec("delete from voter_list where id_subject=".$id_subject."");
         $file_db->exec("delete from vote where id_subject=".$id_subject."");
         $file_db->exec("delete from comment where id_subject=".$id_subject."");
 

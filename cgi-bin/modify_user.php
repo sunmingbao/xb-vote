@@ -36,9 +36,9 @@
 <?php print_hdr(); ?>
 
 <?php
-    $_SESSION['real_name'] =  $_POST['real_name'];
-    $_SESSION['stuff_id']  =  $_POST['stuff_id'];
-    $_SESSION['sex']       =  $_POST['sex'];
+    $_SESSION['real_name'] =  $_SESSION['real_name'];
+    $_SESSION['stuff_id']  =  $_SESSION['stuff_id'];
+    $_SESSION['sex']       =  $_SESSION['sex'];
     $_SESSION['tel_no']    =  $_POST['member_phone'];
     $_SESSION['email']     =  $_POST['member_email'];
 
