@@ -40,7 +40,7 @@ session_start();
     $password_hash=md5($_POST['password']);
     $real_name=$_POST['real_name'];
     $stuff_id=$_POST['stuff_id'];
-    if($stuff_id=='') $stuff_id = '00000000';
+    //if($stuff_id=='') $stuff_id = '00000000';
     $sex=$_POST['sex'];
     $tel_no=$_POST['member_phone'];
     $email=$_POST['member_email'];
@@ -55,17 +55,19 @@ session_start();
     $result = $file_db->query("select * from user where user_name='".$user_name."'");
 
 //var_dump($result);
-    $cnt=0;
-    if (!is_bool($result))
-    foreach($result as $row) 
-    {
-        $cnt=$cnt+1;
-    }
-
-    if ($cnt>0)
+    if (!result_empty($result))
     {
         put_mutex();
-        die("<H1>用户名已存在</H1>");
+        die("<H1>错误：用户名已存在</H1>");
+    }
+
+    $result = $file_db->query("select * from user where stuff_id='".$stuff_id."'");
+
+//var_dump($result);
+    if (!result_empty($result))
+    {
+        put_mutex();
+        die("<H1>错误：工号已注册</H1>");
     }
 
     try
@@ -75,7 +77,7 @@ session_start();
     catch (PDOException $e) 
     {
         put_mutex();
-        die("<H1>insert user failed.</H1>");
+        die("<H1>错误：write database failed.</H1>");
     }
     put_mutex();
     

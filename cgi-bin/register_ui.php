@@ -24,12 +24,57 @@ session_start();
 <title>新用户注册</title>
 
 <script language="javascript">
+
+function str_is_number(str){
+    var len=str.length;
+    var i=0;
+    var digits="0123456789";
+    for (i=0; i<len; i++) {
+        var one_char = str.charAt(i) ;
+        if (digits.indexOf(one_char)<0)
+            return (false);
+    }
+
+    return (true);
+}
+
+function stuff_id_ok(theForm){
+        var stuff_id = theForm.stuff_id.value;
+
+	if (stuff_id.replace(/(^\s*)|(\s*$)/g, "") == ""){
+		alert("工号不能为空！");
+		theForm.stuff_id.focus();   
+		return (false);
+	}
+
+	if (stuff_id.length != 8){
+		alert("工号长度必须为8位");
+		theForm.stuff_id.focus();   
+		return (false);   
+	}
+
+	if (!str_is_number(stuff_id)){
+		alert("工号必须是数字");
+		theForm.stuff_id.focus();   
+		return (false);   
+	}
+
+        var first_char = stuff_id.charAt(0);
+	if (first_char != '0' && first_char != '1'){
+		alert("工号必须以0或1开头");
+		theForm.stuff_id.focus();   
+		return (false);   
+	}
+
+        return (true);
+}
+
 function chk(theForm){
 	if (theForm.user_name.value.replace(/(^\s*)|(\s*$)/g, "") == ""){
 		alert("帐号不能为空！");
 		theForm.user_name.focus();   
 		return (false);   
-	}		
+	}
 	
 	if (theForm.password.value.replace(/(^\s*)|(\s*$)/g, "") == ""){
 		alert("密码不能为空！");
@@ -49,14 +94,15 @@ function chk(theForm){
 		return (false);   
 	}
 
-/*
+
 	if (theForm.real_name.value.replace(/[\u4e00-\u9fa5]/g, "")){
 		alert("真实姓名必须为中文！");   
 		theForm.real_name.focus();   
 		return (false);   
 	}
-*/
-        return (true); 
+
+
+        return stuff_id_ok(theForm); 
 }
 </script>
 
